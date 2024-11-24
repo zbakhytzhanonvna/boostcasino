@@ -35,16 +35,17 @@ Promotions sections
 
 Verification of all menu entries and redirects
 
+## Getting Started
 
-# Install dependencies
+### Install dependencies
 `npm install`
 
-# Run Cypress test runner
+### Run Cypress test runner
 `npm run cy:open`
 After opening Cypress, select "E2E Testing" and choose the feature you want to run.
 
 
-Key Assumptions
+## Key Assumptions
 
 Game Search Behavior: The test suite assumes there is a single "Book of Dead" game. If similar titles exist (e.g., "Book of Dead Part 2"), the search will return multiple results. We need to establish a consistent approach for game selection:
 
@@ -53,15 +54,15 @@ Option 2: Only proceed if there's exactly one search result
 
 
 
-Technical Implementation
-Framework Structure
+# Technical Implementation
+## Framework Structure
 
 BDD feature files
 Step definitions
 Page Object Models
 Configuration files
 
-Key Technical Solutions
+## Key Technical Solutions
 
 Async Operations Handling
 
@@ -72,7 +73,7 @@ Used cucumber.DataTable to be able to reuse tap menu functions and make feature 
 
 
 
-Technical Challenges & Solutions
+## Technical Challenges & Solutions
 Async Operations Handling
 
 Search Results Loading
@@ -83,7 +84,7 @@ Also, added 1-second delay in HomePage.search method to ensure DOM updates compl
 
 
 
-UI Layout Issues
+## UI Layout Issues
 
 Language Menu: Currently overlapped by top element
 Hamburger Menu: Overlap issues on iPhone-X viewport
@@ -94,11 +95,11 @@ Feature Organization
 Extracted Menu List to site-navigation.feature
 Made tap menu functionality extendable
 
-TODO List
+## TODO List
 
  Implement robust game loading verification (possibly using request interception)
  Add user is logged out verification
  Expand functions' documentation
  
-Personal Notes
+## Personal Notes
 This project served as my introduction to BDD (Behavior-Driven Development). Through analyzing existing examples and documentation, I successfully implemented a working test service.
