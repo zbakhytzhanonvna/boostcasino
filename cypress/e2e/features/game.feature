@@ -1,8 +1,7 @@
 Feature: Game Search and Launch
 
 Background:
-    Given I navigate to Boost Casino
-    And I allow all cookies
+    Given I am on the BoostCasino homepage
 
 Scenario: A logged-out user should find and open a game
     Then The search input is visible

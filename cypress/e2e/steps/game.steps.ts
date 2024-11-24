@@ -3,14 +3,6 @@ import HomePage from "../pageobjects/HomePage";
 
 const homePage = new HomePage();
 
-Given('I navigate to Boost Casino', (): void => {
-    homePage.visit();
-});
-
-Given('I allow all cookies', (): void => {
-    homePage.acceptAllCookies();
-});
-
 Then('The search input is visible', (): void => {
     homePage.verifySearchInputIsVisible();
 });

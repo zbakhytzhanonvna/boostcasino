@@ -21,3 +21,5 @@ to delay next command. It was added in `HomePage.search` method
 
 TODO
 How to ensure game loaded succesfully? Maybe intercept requests
+Verify a user is logged out
+Add docs
