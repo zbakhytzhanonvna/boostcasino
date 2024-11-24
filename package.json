@@ -1,0 +1,40 @@
+{
+  "name": "boost-casino-tests",
+  "version": "1.0.0",
+  "description": "Boost Casino Test Automation Framework",
+  "scripts": {
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "cy:run:chrome": "cypress run --browser chrome",
+    "cy:run:firefox": "cypress run --browser firefox"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^21.0.3",
+    "@bahmutov/cypress-esbuild-preprocessor": "^2.2.3",
+    "cypress": "^13.6.0",
+    "esbuild": "^0.24.0",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@types/cypress": "^1.1.3",
+    "@types/node": "^20.10.6",
+    "@typescript-eslint/eslint-plugin": "^6.18.0",
+    "@typescript-eslint/parser": "^6.18.0",
+    "eslint": "^8.56.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jsonc": "^2.11.2",
+    "eslint-plugin-n": "^16.6.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "typescript": "^5.3.3"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/e2e/steps/*.ts"
+    ],
+    "html": {
+      "enabled": true
+    }
+  }
+}

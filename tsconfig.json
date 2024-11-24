@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM"],
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "types": ["cypress", "@types/node"],
+    "paths": {
+      "@badeball/cypress-cucumber-preprocessor/*": ["./node_modules/@badeball/cypress-cucumber-preprocessor/dist/subpath-entrypoints/*"]
+    }
+  },
+  "include": [
+    "cypress/**/*.ts",
+    "cypress/support/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
