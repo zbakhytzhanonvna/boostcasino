@@ -20,4 +20,9 @@ export default abstract class BasePage {
     protected type(selector: string, text: string): void {
         this.get(selector).should('be.visible').clear().type(text);
     }
+    
+  public acceptAllCookies(): void {
+    cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click();
+  }
+
 }

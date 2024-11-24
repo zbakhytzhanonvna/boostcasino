@@ -18,6 +18,11 @@ Encountered difficulties,
 When searching games, the result is not immediate, I had to add interceptor, adding some delay untill the client gets response
 That was not enough, the next command starts immediately and it gets old dom, still not refrehsed, so I had to add 1 second wait 
 to delay next command. It was added in `HomePage.search` method
+Language Menu is overlapped by top element
+Hamburher Menu is overlappen in iphone-x
+Extract Menu List to site-navigation.feature,
+Make tap menu extendable
+
 
 TODO
 How to ensure game loaded succesfully? Maybe intercept requests

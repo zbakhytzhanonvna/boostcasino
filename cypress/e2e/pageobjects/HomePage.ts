@@ -38,10 +38,6 @@ export default class HomePage extends BasePage {
     cy.get('div.sc-dIouRR').should('be.visible');
   }
 
-  public acceptAllCookies(): void {
-    cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click();
-  }
-
   public verifyGamesMatchingTitleAreVisible(gameTitle: string): void {
     cy.get('div.sc-dIouRR').each(($game) => {
       cy.wrap($game).within(() => {
