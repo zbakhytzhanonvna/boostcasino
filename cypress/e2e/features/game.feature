@@ -1,8 +1,10 @@
 Feature: Game Search and Launch
 
-Scenario: A logged-out user should find and open a game
+Background:
     Given I navigate to Boost Casino
     And I allow all cookies
+
+Scenario: A logged-out user should find and open a game
     Then The search input is visible
     And The list of games is visible
     When I search for "Book of Dead"
