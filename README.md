@@ -1,30 +1,104 @@
+# Boost Casino E2E Test Automation Framework
+
+This project implements an end-to-end test automation framework for Boost Casino website (https://www.boostcasino.com/) using Cypress with BDD approach.
+Test Coverage
+The framework implements automated tests for three main features:
+
+Game Search and Launch
+
+Search for "Book of Dead" game
+Verify search results
+Launch the game
+
+
+Language Switching
+
+Verify language dropdown functionality
+Test language switches to:
+
+Finnish (FI)
+Estonian (EE)
+Russian (RU)
 
 
 
-npm install, to install dependencies
-npm run cy:open, to run test
-choose e2e test, 
-select a feature you want to run
+
+Mobile Site Navigation
+
+Hamburger menu functionality
+Navigation through various sections:
+
+Casino categories
+Live Casino categories
+Promotions sections
 
 
-assumptions
-1. There is a single game Book of Dead. If there are a new games appaear with similar title, such as Book of Dead Part 2, it will show
-two games at least. We need to decide which game to choose to play, it might be always first, or we expect to play games only if
-there is only one game in the search result
-
-I didn't work with BDD before, I had to analyze and using examples I now have up and running service.
-
-Encountered difficulties,
-When searching games, the result is not immediate, I had to add interceptor, adding some delay untill the client gets response
-That was not enough, the next command starts immediately and it gets old dom, still not refrehsed, so I had to add 1 second wait 
-to delay next command. It was added in `HomePage.search` method
-Language Menu is overlapped by top element
-Hamburher Menu is overlappen in iphone-x
-Extract Menu List to site-navigation.feature,
-Make tap menu extendable
+Verification of all menu entries and redirects
 
 
-TODO
-How to ensure game loaded succesfully? Maybe intercept requests
-Verify a user is logged out
-Add docs
+# Install dependencies
+`npm install`
+
+# Run Cypress test runner
+`npm run cy:open`
+After opening Cypress, select "E2E Testing" and choose the feature you want to run.
+
+
+Key Assumptions
+
+Game Search Behavior: The test suite assumes there is a single "Book of Dead" game. If similar titles exist (e.g., "Book of Dead Part 2"), the search will return multiple results. We need to establish a consistent approach for game selection:
+
+Option 1: Always select the first game
+Option 2: Only proceed if there's exactly one search result
+
+
+
+Technical Implementation
+Framework Structure
+
+BDD feature files
+Step definitions
+Page Object Models
+Configuration files
+
+Key Technical Solutions
+
+Async Operations Handling
+
+Implemented interceptors for managing API response timing
+Added strategic delays for DOM updates in HomePage.search method
+Managed overlapping elements in mobile view by selecting accurately viewport values, just for testing purposes.
+Used cucumber.DataTable to be able to reuse tap menu functions and make feature files more flexible.
+
+
+
+Technical Challenges & Solutions
+Async Operations Handling
+
+Search Results Loading
+
+Issue: Search results weren't immediately available in the DOM
+Solution: Implemented interceptors to handle API response timing
+Also, added 1-second delay in HomePage.search method to ensure DOM updates complete
+
+
+
+UI Layout Issues
+
+Language Menu: Currently overlapped by top element
+Hamburger Menu: Overlap issues on iPhone-X viewport
+
+Architecture Improvements
+Feature Organization
+
+Extracted Menu List to site-navigation.feature
+Made tap menu functionality extendable
+
+TODO List
+
+ Implement robust game loading verification (possibly using request interception)
+ Add user is logged out verification
+ Expand functions' documentation
+ 
+Personal Notes
+This project served as my introduction to BDD (Behavior-Driven Development). Through analyzing existing examples and documentation, I successfully implemented a working test service.
