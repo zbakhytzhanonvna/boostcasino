@@ -2,7 +2,7 @@ export default abstract class BasePage {
     protected readonly timeout: number = 10000;
 
     public visit(): void {
-        cy.intercept('GET', '/api/casino/games*').as('casinoGames');
+        cy.intercept('GET', '/api/casino/games*').as('casinoGames'); 
         cy.visit("https://boostcasino.com/");
         cy.wait('@casinoGames', {timeout: this.timeout});
     }
@@ -21,8 +21,8 @@ export default abstract class BasePage {
         this.get(selector).should('be.visible').clear().type(text);
     }
     
-  public acceptAllCookies(): void {
-    cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click();
-  }
+    public acceptAllCookies(): void {
+        cy.get('#CybotCookiebotDialogBodyLevelButtonLevelOptinAllowAll').click();
+    }
 
 }

@@ -52,7 +52,6 @@ export default class SiteNavigationPage extends BasePage {
         });
     }
     
-    
     public verifyRedirection(expectedPage: string): void {
         cy.url().should('include', expectedPage.toLowerCase());
     }
@@ -62,14 +61,12 @@ export default class SiteNavigationPage extends BasePage {
             .should('have.length', expectedCategories.length)
             .each(($el, index) => {
                 cy.wrap($el)
-                    .find('span.sc-crXcEl')
-                    .last() // Use `.last()` to get the innermost span containing the actual category text
-                    .invoke('text') // Extract text
-                    .then((text) => {
-                        const cleanText = text.trim(); // Clean up whitespace
-                        console.log("Cleaned text:", cleanText);
-                        expect(cleanText).to.equal(expectedCategories[index]); // Validate against expected categories
-                    });
+                .find('span.sc-crXcEl')
+                .last()
+                .invoke('text')
+                .then((text) => {
+                    expect(text.trim()).to.equal(expectedCategories[index]);
+                });
             });
     }    
     

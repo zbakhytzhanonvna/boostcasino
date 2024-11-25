@@ -77,11 +77,9 @@ export default class HomePage extends BasePage {
       .contains(language)
       .should('be.visible')
       .click();
-    // cy.get('[data-cy="navDropdown-language"] nav[data-af="nav"]').should('not.be.visible');
   }
 
   public verifyLanguage(language: string): void {
-    // cy.url().should('include', `/${language.toLowerCase()}`);
     const languageTexts: Record<string, string> = {
       Finnish: 'Kirjaudu',
       Estonian: 'Logi sisse',
